@@ -105,11 +105,11 @@ def insert_patient(patient_list):
             print("Sinh hiệu không hợp lệ !, vui lòng nhập số lớn hơn hoặc bằng 36.5 !")
             continue        
         break 
-    patient_list.append(f"{patient_code.strip()}|{patient_name.strip()}|HR:{patient_hear}|TEMP:{patient_tempo}")
+    patient_list.append(f"ER{patient_code.strip()}|{patient_name.strip()}|HR:{patient_hear}|TEMP:{patient_tempo}")
     print(
         "Thêm hồ sơ bệnh nhân thành công ! \n"
         "Sau khi chuẩn hóa, dữ liệu được lưu là: \n"
-        f"{patient_code.strip()}|{patient_name.strip()}|HR:{patient_hear}|TEMP:{patient_tempo}"
+        f"ER{patient_code.strip()}|{patient_name.strip()}|HR:{patient_hear}|TEMP:{patient_tempo}"
         )
     print("Tiếp nhận ca cấp cứu mới thành công !")
 
@@ -176,6 +176,7 @@ def update_patient(patients_list):
         result = "|".join([current_patient[0], current_patient[1], f"HR:{new_patient_hear}", current_patient[3]])
     else:
         result = "|".join([current_patient[0], current_patient[1], current_patient[2], f"TEMP:{new_patient_tempo}"])
+    patients_list[find_index] = result
     print("Đã cập nhật bệnh thành công !") 
     print(f"Dữ liệu mới được lưu: \n{result}")
 
